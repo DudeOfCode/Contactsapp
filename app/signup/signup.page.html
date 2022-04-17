@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-toolbar color = "warning" >
+    <ion-title>Create Contact</ion-title>
+  </ion-toolbar>
+
+  
+</ion-header>
+
+<ion-content color = "dark" max-width= "100%">
+
+
+  <ion-list color = "dark" >
+    
+<ion-label>First name</ion-label>
+  <ion-item color = "dark" class = "bag">
+    <ion-input [(ngModel)]="fname" placeholder = "First Name" color="danger"></ion-input>
+  </ion-item>
+
+
+  <ion-label>Last name</ion-label>
+  <ion-item color = "dark" class = "bag">
+  <ion-input [(ngModel)]="lname"  placeholder = "Last Name"  color = "danger"></ion-input>
+</ion-item>
+
+<ion-label>Middle name </ion-label>
+<ion-item color = "dark" class="bag">
+  <ion-input [(ngModel)]="mname" placeholder = "Middle Name" color="danger"></ion-input>
+</ion-item>
+
+
+  <ion-label>Phone number</ion-label>
+    <ion-item color = "dark" class="bag">
+      <ion-input [(ngModel)]="pnum" type= "number" placeholder = "Phone Number" color="danger"></ion-input>
+    </ion-item>
+
+
+
+
+
+</ion-list>
+
+<div>
+  <ion-button color = "warning" expand = "full"shape = "round" (click) = "createContacts()"  >create contact</ion-button>
+</div>
+
+    <!-- <ion-list>
+        <ion-label>Email</ion-label>
+        <ion-input color = "medium"  placeholder = "example@gmail.com" id = "okna" ></ion-input>
+      </ion-list>
+      
+      <ion-list>
+        <ion-label>Password</ion-label>
+        <ion-input class = "pawon"  placeholder = "*********" type = "password"></ion-input>
+      </ion-list>
+        <ion-button color = "danger" routerLink = "/home" > Signup </ion-button> -->
+<ion-button shape="round" routerLink="/home" color = "warning" routerDirection="">
+  <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+</ion-button>
+
+</ion-content>

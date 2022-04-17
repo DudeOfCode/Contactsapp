@@ -1,0 +1,69 @@
+ <ion-header>
+ <ion-toolbar [translucent]= "true" color = "secondary">
+ 
+  
+    <ion-title color = "dark">
+      AE'S CONTACTS
+    </ion-title>
+  </ion-toolbar>
+
+    <ion-toolbar color = "secondary">
+    <ion-searchbar color = "dark" class = "dab" [(ngModel)] = "masha"  (change) ="loadContacts($event)">
+<!-- <ion-button  (click) = "loadContacts()" >
+   <ion-icon button  name = "search" >
+  </ion-icon>
+</ion-button> -->
+     </ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+<ion-content [fullscreen]="true" color = "primary">
+
+  <!-- <ion-button (click) = "loadContacts()" expand = "full" > Load con</ion-button> -->
+
+<ion-text color="medium" *ngIf="myContacts.length == 0" class="ion-padding ion-text-center">
+  <b>
+    <p>no contacts found</p>
+  </b>
+</ion-text>
+
+
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" routerDirection="" routerLink="/signup" >
+  <ion-fab-button size="small">
+    <ion-icon name="add">
+    </ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+
+
+  <ion-list color = "primary">
+    <ion-item-sliding *ngFor = "let c of myContacts">
+<ion-item color = "primary" >
+  <ion-label>{{ c.name.givenName }} <b> {{ c.name.familyName }} </b>
+  <p>
+    {{ c.phoneNumbers[0].value }}
+  </p>
+  </ion-label>
+</ion-item>
+
+<ion-item-options>
+  <ion-item-option (click) = "call(c)" color = "secondary">
+<ion-icon name = "call" color = "success" slot = "icon-only"></ion-icon>
+  </ion-item-option>
+
+  <ion-item-option (click)="sendSms(c)" color="tertiary">
+    <ion-icon name="mail" slot="icon-only"></ion-icon>
+  </ion-item-option>
+
+</ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+
+
+
+
+
+</ion-content>
